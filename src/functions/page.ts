@@ -1,6 +1,7 @@
 import {app, HttpRequest, HttpResponseInit, InvocationContext} from "@azure/functions"
 import {Client} from "@notionhq/client"
 import {NotionToMarkdown} from "notion-to-md"
+import {Converter} from "showdown"
 
 async function html(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     context.log(`Hola`)
@@ -11,7 +12,12 @@ async function html(request: HttpRequest, context: InvocationContext): Promise<H
     context.log(`Requesting notion page ${request.params.pageId}`)
     const mdblocks = await n2m.pageToMarkdown(request.params.pageId)
     const mdString = n2m.toMarkdownString(mdblocks).parent
-    return {body: mdString, headers: {'Content-Type': 'text/html'}}
+    const showdown = new Converter({
+        tables: true,
+        tasklists: true,
+    })
+    const htmlString = showdown.makeHtml(mdString)
+    return {body: htmlString, headers: {'Content-Type': 'text/html'}}
 }
 
 app.http('html', {
