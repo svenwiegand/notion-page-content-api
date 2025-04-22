@@ -4,7 +4,7 @@ An azure function that allows to interact with Notion page contents. It provides
 - get page content as markdown
 - get page content as HTML (optionally with images embedded)
 
-This azure app utilizes the following libraries for the heavy lifting:
+This azure app utilizes the following key libraries for the heavy lifting:
 
 - [notion-to-md](https://github.com/souvikinator/notion-to-md#api)
 - [showdown](https://github.com/showdownjs/showdown#readme)
@@ -28,4 +28,7 @@ Authorization: Bearer <your_secret>
 
 # Endpoints
 ## `GET /page/{pageId}/content/markdown`
-Takes a notion page id and returns the HTML.
+Returns a page's content as markdown.
+
+## `GET /page/{pageId}/content/html?embedImages=true`
+Returns a page's content as HTML, optionally with external images embedded.
