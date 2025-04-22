@@ -1,5 +1,5 @@
 {
-  "name": "notion-to-html-azure",
+  "name": "notion-page-content-api",
   "version": "1.0.0",
   "description": "",
   "main": "dist/src/functions/*.js",
