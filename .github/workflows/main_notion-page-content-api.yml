@@ -67,3 +67,5 @@ jobs:
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7D9BEBB6E3104916A69894B31CFC09C5 }}
+          scm-do-build-during-deployment: true
+          enable-oryx-build: true
