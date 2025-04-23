@@ -17,6 +17,7 @@
     "@azure/core-auth": "^1.9.0",
     "@azure/functions": "^4.0.0",
     "@notionhq/client": "^2.3.0",
+    "@tryfabric/martian": "^1.2.4",
     "node-html-parser": "^7.0.1",
     "notion-to-md": "^3.1.8",
     "showdown": "^2.1.0"
