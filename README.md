@@ -16,9 +16,10 @@ As the api directly accesses your Notion pages you have to do some setup:
 2. Create a new integration
 3. Give it a name, the type "Internal" and click "Save"
 4. Give it the required capabilities
-  - `Read content` to get page content
-  - `Update content` to update page content 
-  - Copy the `secret`
+   - `Read content` to get page content
+   - `Update content` to update page content 
+   - Copy the `secret`
+5. Go to the page you want to work on and ensure, that the integration has access to it.
 
 For each of the API calls use bearer token authentication with the secret as your token:
 
